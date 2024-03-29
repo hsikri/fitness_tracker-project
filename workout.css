@@ -12,7 +12,6 @@ body {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Align content to center */
 }
 
 h1 {
@@ -21,19 +20,22 @@ h1 {
 }
 
 .dropdown {
+    position: relative;
     display: inline-block;
     margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 .dropbtn {
     background-color: #007bff;
     color: white;
-    padding: 20px; /* Increase padding for larger buttons */
-    font-size: 18px; /* Increase font size for larger buttons */
+    padding: 10px;
+    font-size: 16px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 .dropdown-content {
