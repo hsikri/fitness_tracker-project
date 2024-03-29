@@ -3,41 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upper Body Exercises</title>
+    <title>Upper Body Workout</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='upperbody.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Upper Body Exercises</h1>
-        <table class="exercise-table">
-            <tr>
-                <th>Exercise</th>
-                <th>Reps</th>
-                <th>Personal Record</th>
-            </tr>
-            <tr>
-                <td>Bent-over row</td>
-                <td><input type="number" value="0"></td>
-                <td><button onclick="recordPR('Bent-over row')">PR</button></td>
-            </tr>
-            <tr>
-                <td>Overhead press</td>
-                <td><input type="number" value="0"></td>
-                <td><button onclick="recordPR('Overhead press')">PR</button></td>
-            </tr>
-            <tr>
-                <td>Bench press</td>
-                <td><input type="number" value="0"></td>
-                <td><button onclick="recordPR('Bench press')">PR</button></td>
-            </tr>
-            <!-- Add more exercise rows here -->
-        </table>
+        <h1>Upper Body Workout</h1>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Reps</th>
+                    <th>Personal Record (PR)</th>
+                </tr>
+                <tr>
+                    <td>Bent-over row</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Overhead press</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Bench press</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Bicep curl</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Pushups</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Triceps dips</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Arnold press</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Chest press</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Chest supported rows</td>
+                    <td><input type="number" value="0"></td>
+                    <td><button onclick="showCongratulations()">PR</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
-
     <script>
-        function recordPR(exercise) {
-            alert('Well done on your achievement! Keep making yourself proud.');
-            // Implement your PR recording logic here
+        function showCongratulations() {
+            alert("Congratulations! Keep working hard!");
         }
     </script>
 </body>
