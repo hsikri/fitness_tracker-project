@@ -1,0 +1,47 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background-image: url('../static/dashboard.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.tiles {
+    display: flex;
+    justify-content: space-around; /* Equal spacing between tiles */
+}
+
+.tile {
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease; /* Transition effect for smoother color change */
+    margin: 10px; /* Add space between tiles */
+}
+
+.tile:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Darken the background color on hover */
+}
+
+.tile h2 {
+    margin-bottom: 10px;
+}
