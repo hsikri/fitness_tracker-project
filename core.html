@@ -10,70 +10,112 @@
     <div class="container">
         <h1>Core Workout</h1>
         <div class="exercise">
-            <h2>Plank</h2>
-            <label for="plank_reps">Reps:</label>
-            <input type="number" id="plank_reps" name="plank_reps" value="0">
-            <button onclick="addPR('Plank')">PR</button>
+            <h2>Exercise 1: Plank</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Side plank</h2>
-            <label for="side_plank_reps">Reps:</label>
-            <input type="number" id="side_plank_reps" name="side_plank_reps" value="0">
-            <button onclick="addPR('Side Plank')">PR</button>
+            <h2>Exercise 2: Side Plank</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Russian twists</h2>
-            <label for="russian_twists_reps">Reps:</label>
-            <input type="number" id="russian_twists_reps" name="russian_twists_reps" value="0">
-            <button onclick="addPR('Russian Twists')">PR</button>
+            <h2>Exercise 3: Bird Dog Exercise</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Bicycle crunches</h2>
-            <label for="bicycle_crunches_reps">Reps:</label>
-            <input type="number" id="bicycle_crunches_reps" name="bicycle_crunches_reps" value="0">
-            <button onclick="addPR('Bicycle Crunches')">PR</button>
+            <h2>Exercise 4: Deadbug Hollow Hold</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Deadbug</h2>
-            <label for="deadbug_reps">Reps:</label>
-            <input type="number" id="deadbug_reps" name="deadbug_reps" value="0">
-            <button onclick="addPR('Deadbug')">PR</button>
+            <h2>Exercise 5: Bicycle Crunches</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Hollow Hold</h2>
-            <label for="hollow_hold_reps">Reps:</label>
-            <input type="number" id="hollow_hold_reps" name="hollow_hold_reps" value="0">
-            <button onclick="addPR('Hollow Hold')">PR</button>
+            <h2>Exercise 6: Glute Bridge</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Leg Raise</h2>
-            <label for="leg_raise_reps">Reps:</label>
-            <input type="number" id="leg_raise_reps" name="leg_raise_reps" value="0">
-            <button onclick="addPR('Leg Raise')">PR</button>
+            <h2>Exercise 7: Leg Raise</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Mountain Climbers</h2>
-            <label for="mountain_climbers_reps">Reps:</label>
-            <input type="number" id="mountain_climbers_reps" name="mountain_climbers_reps" value="0">
-            <button onclick="addPR('Mountain Climbers')">PR</button>
+            <h2>Exercise 8: Crunches</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Plank Jacks</h2>
-            <label for="plank_jacks_reps">Reps:</label>
-            <input type="number" id="plank_jacks_reps" name="plank_jacks_reps" value="0">
-            <button onclick="addPR('Plank Jacks')">PR</button>
+            <h2>Exercise 9: Russian Twists</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
         <div class="exercise">
-            <h2>Toe Touch Crunches</h2>
-            <label for="toe_touch_crunches_reps">Reps:</label>
-            <input type="number" id="toe_touch_crunches_reps" name="toe_touch_crunches_reps" value="0">
-            <button onclick="addPR('Toe Touch Crunches')">PR</button>
+            <h2>Exercise 10: Mountain Climbers</h2>
+            <table>
+                <tr>
+                    <td>Number of Reps:</td>
+                    <td><input type="number" value="0"></td>
+                </tr>
+            </table>
+            <button onclick="showCongratsMessage()">PR</button>
         </div>
     </div>
+
     <script>
-        function addPR(exerciseName) {
-            alert('Congratulations on your achievement! Keep working hard.');
+        function showCongratsMessage() {
+            alert("Congratulations! Keep working hard!");
         }
     </script>
 </body>
 </html>
+
