@@ -108,6 +108,27 @@ def add_water_intake():
 def workout():
     return render_template('workout.html')
 
+# Route for upper body workout page
+@app.route('/upperbody.html')
+def upperbody():
+    return render_template('upperbody.html')
+
+# Route for lower body workout page
+@app.route('/lowerbody.html')
+def lowerbody():
+    return render_template('lowerbody.html')
+
+# Route for core workout page
+@app.route('/core.html')
+def core():
+    return render_template('core.html')
+
+# Route for calorie tracker page
+@app.route('/calorie.html')
+def calorie():
+    return render_template('calorie.html')
+
+
 if __name__ == '__main__':
     initialize_database()
     app.run(debug=True)
