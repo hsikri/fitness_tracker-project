@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upper Body Workout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upper Body Workout</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Select Exercise</button>
+            <div class="dropdown-content">
+                <a href="#">Bent-over row</a>
+                <a href="#">Overhead press</a>
+                <a href="#">Bench press</a>
+                <a href="#">Bicep curl</a>
+                <a href="#">Pushups</a>
+                <a href="#">Triceps dips</a>
+                <a href="#">Arnold press</a>
+                <a href="#">Chest press</a>
+                <a href="#">Chest supported rows</a>
+            </div>
+        </div>
+        <label for="reps">Number of Reps:</label>
+        <input type="number" id="reps" name="reps" min="1" required>
+        <button onclick="addPR()">Add Personal Best (PR)</button>
+    </div>
+
+    <script>
+        function addPR() {
+            alert("Added Personal Best!");
+            // Here you can add JavaScript code to handle adding personal best to database or perform any other action
+        }
+    </script>
+</body>
+</html>
+
