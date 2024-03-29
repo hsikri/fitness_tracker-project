@@ -1,14 +1,18 @@
-/* Global styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
 }
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Align content to center */
 }
 
 h1 {
@@ -16,53 +20,48 @@ h1 {
     margin-bottom: 20px;
 }
 
-form {
-    text-align: center;
+.dropdown {
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
-select {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-input[type="submit"] {
+.dropbtn {
     background-color: #007bff;
-    color: #fff;
+    color: white;
+    padding: 20px; /* Increase padding for larger buttons */
+    font-size: 18px; /* Increase font size for larger buttons */
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Specific styles for workout page */
-.workout-container {
+.dropdown-content {
+    display: none;
+    position: absolute;
     background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
 }
 
-.workout-header {
-    text-align: center;
-    margin-bottom: 30px;
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
-.workout-header h1 {
-    color: #333;
+.dropdown-content a:hover {
+    background-color: #ddd;
 }
 
-.workout-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #0056b3;
 }
 
