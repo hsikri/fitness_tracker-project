@@ -72,7 +72,7 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('home'))  # Redirect to the home page (login) after logout
 
-# Route for adding a workout
+'''# Route for adding a workout
 @app.route('/add_workout', methods=['POST'])
 def add_workout():
     if 'username' in session:
@@ -87,7 +87,7 @@ def add_workout():
         return redirect(url_for('dashboard'))
     else:
         return redirect(url_for('home'))
-
+'''
 # Routes for other functionalities...
 
 # Route for water intake page
@@ -104,7 +104,7 @@ def add_water_intake():
     return redirect(url_for('dashboard'))
 
 # Route for the workout page
-@app.route('/workout.html')
+@app.route('/workout')
 def workout():
     return render_template('workout.html')
 
