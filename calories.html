@@ -3,52 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calorie Calculator</title>
-    <!-- Add your CSS link here -->
+    <title>Calorie Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='calories.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Calorie Calculator</h1>
-        <form id="calorieForm">
-            <table id="foodTable">
+        <h1>Calorie Tracker</h1>
+        <table>
+            <thead>
                 <tr>
-                    <th>Food Item</th>
-                    <th>Calories (per serving)</th>
+                    <th>Food</th>
+                    <th>Calories</th>
                 </tr>
-                <tr>
-                    <td><input type="text" name="foodItem[]" placeholder="Enter food item"></td>
-                    <td><input type="number" name="calories[]" placeholder="Enter calories"></td>
-                </tr>
-            </table>
-            <button type="button" onclick="addRow()">Add Food</button>
-            <button type="submit">Calculate Calories</button>
-        </form>
-        <div id="totalCalories"></div>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+        <button class="btn" onclick="addFood()">Add Food</button>
     </div>
 
     <script>
-        function addRow() {
-            var table = document.getElementById("foodTable");
-            var row = table.insertRow(table.rows.length);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            cell1.innerHTML = '<input type="text" name="foodItem[]" placeholder="Enter food item">';
-            cell2.innerHTML = '<input type="number" name="calories[]" placeholder="Enter calories">';
+        function addFood() {
+            // You can implement the functionality to add food dynamically here
+            alert("Functionality to add food will be implemented here.");
         }
-
-        document.getElementById("calorieForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var form = event.target;
-            var foodItems = form.elements["foodItem[]"];
-            var calories = form.elements["calories[]"];
-            var totalCalories = 0;
-            for (var i = 0; i < foodItems.length; i++) {
-                if (foodItems[i].value && calories[i].value) {
-                    totalCalories += parseInt(calories[i].value);
-                }
-            }
-            document.getElementById("totalCalories").innerHTML = "<p>Total Calories: " + totalCalories + "</p>";
-        });
     </script>
 </body>
 </html>
