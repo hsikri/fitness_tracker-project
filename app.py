@@ -124,9 +124,9 @@ def core():
     return render_template('core.html')
 
 # Route for calorie tracker page
-@app.route('/calorie.html')
-def calorie():
-    return render_template('calorie.html')
+@app.route('/calories')
+def calories():
+    return render_template('calories.html')
 
 
 if __name__ == '__main__':
