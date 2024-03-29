@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Workout Tracker</h1>
+        <div class="exercise-section">
+            <div class="dropdown">
+                <button class="dropbtn">Upper Body</button>
+                <div class="dropdown-content">
+                    <a href="#">Bent-over row</a>
+                    <a href="#">Overhead press</a>
+                    <a href="#">Bench press</a>
+                    <a href="#">Bicep curl</a>
+                    <a href="#">Pushups</a>
+                    <a href="#">Triceps dips</a>
+                    <a href="#">Arnold press</a>
+                    <a href="#">Chest press</a>
+                    <a href="#">Chest supported rows</a>
+                </div>
+                <input type="number" placeholder="Sets" class="sets-input">
+                <button class="pr-button">Add Personal Best (PR)</button>
+            </div>
+        </div>
+        <div class="exercise-section">
+            <div class="dropdown">
+                <button class="dropbtn">Lower Body</button>
+                <div class="dropdown-content">
+                    <a href="#">Bulgarian split squat</a>
+                    <a href="#">Goblet squat</a>
+                    <a href="#">Lateral lunge</a>
+                    <a href="#">Single leg deadlift</a>
+                    <a href="#">Reverse lunge</a>
+                    <a href="#">Calf raise</a>
+                    <a href="#">Glute bridge</a>
+                    <a href="#">Lunge Squat</a>
+                </div>
+                <input type="number" placeholder="Sets" class="sets-input">
+                <button class="pr-button">Add Personal Best (PR)</button>
+            </div>
+        </div>
+        <div class="exercise-section">
+            <div class="dropdown">
+                <button class="dropbtn">Core</button>
+                <div class="dropdown-content">
+                    <a href="#">Plank</a>
+                    <a href="#">Side plank</a>
+                    <a href="#">Bird dog exercise</a>
+                    <a href="#">Deadbug Hollow hold</a>
+                    <a href="#">Bicycle crunches</a>
+                    <a href="#">Glute bridge Leg raise</a>
+                    <a href="#">Lower Leg raise</a>
+                </div>
+                <input type="number" placeholder="Sets" class="sets-input">
+                <button class="pr-button">Add Personal Best (PR)</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
