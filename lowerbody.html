@@ -15,56 +15,67 @@
                     <th>Exercise</th>
                     <th>Reps</th>
                     <th>Personal Record (PR)</th>
+                    <th>Save</th> <!-- New column for Save button -->
                 </tr>
                 <tr>
                     <td>Bulgarian split squat</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Goblet squat</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Lateral lunge</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Single leg deadlift</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Reverse lunge</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Calf raise</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Glute bridge</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Lunge Squat</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Barbell calf raise</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Hip thrusts</td>
                     <td><input type="number" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
             </table>
         </div>
@@ -72,6 +83,15 @@
     <script>
         function showCongratulations() {
             alert("Congratulations! Keep working hard!");
+        }
+
+        function saveReps(button) {
+            var row = button.parentNode.parentNode;
+            var exercise = row.cells[0].innerText;
+            var reps = row.cells[1].querySelector('input').value;
+
+            // You can perform further actions here, such as sending the data to the server for saving
+            alert("Reps for " + exercise + " saved: " + reps);
         }
     </script>
 </body>

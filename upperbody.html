@@ -15,54 +15,63 @@
                     <th>Exercise</th>
                     <th>Reps</th>
                     <th>Personal Record (PR)</th>
+                    <th>Save</th> <!-- New column for Save button -->
                 </tr>
                 <tr>
                     <td>Bent-over row</td>
                     <td><input type="number" id="bent_over_row" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Overhead press</td>
                     <td><input type="number" id="overhead_press" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Bench press</td>
                     <td><input type="number" id="bench_press" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Bicep curl</td>
                     <td><input type="number" id="bicep_curl" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Pushups</td>
                     <td><input type="number" id="pushups" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Triceps dips</td>
                     <td><input type="number" id="triceps_dips" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Arnold press</td>
                     <td><input type="number" id="arnold_press" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Chest press</td>
                     <td><input type="number" id="chest_press" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
                 <tr>
                     <td>Chest supported rows</td>
                     <td><input type="number" id="chest_supported_rows" value="0"></td>
                     <td><button onclick="showCongratulations()">PR</button></td>
+                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
                 </tr>
             </table>
-            <button onclick="saveReps()">Save</button> <!-- Add the Save button -->
         </div>
     </div>
     <script>
@@ -70,28 +79,13 @@
             alert("Congratulations! Keep working hard!");
         }
 
-        function saveReps() {
-            // Get the values of reps for each exercise and save them
-            var bentOverRow = document.getElementById("bent_over_row").value;
-            var overheadPress = document.getElementById("overhead_press").value;
-            var benchPress = document.getElementById("bench_press").value;
-            var bicepCurl = document.getElementById("bicep_curl").value;
-            var pushups = document.getElementById("pushups").value;
-            var tricepsDips = document.getElementById("triceps_dips").value;
-            var arnoldPress = document.getElementById("arnold_press").value;
-            var chestPress = document.getElementById("chest_press").value;
-            var chestSupportedRows = document.getElementById("chest_supported_rows").value;
-            // You can now send these values to your server to save in the database
-            // For now, let's just display them in the console
-            console.log("Bent-over row reps: " + bentOverRow);
-            console.log("Overhead press reps: " + overheadPress);
-            console.log("Bench press reps: " + benchPress);
-            console.log("Bicep curl reps: " + bicepCurl);
-            console.log("Pushups reps: " + pushups);
-            console.log("Triceps dips reps: " + tricepsDips);
-            console.log("Arnold press reps: " + arnoldPress);
-            console.log("Chest press reps: " + chestPress);
-            console.log("Chest supported rows reps: " + chestSupportedRows);
+        function saveReps(button) {
+            var row = button.parentNode.parentNode;
+            var exercise = row.cells[0].innerText;
+            var reps = row.cells[1].querySelector('input').value;
+
+            // You can perform further actions here, such as sending the data to the server for saving
+            alert("Reps for " + exercise + " saved: " + reps);
         }
     </script>
 </body>
