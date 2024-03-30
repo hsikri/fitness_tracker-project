@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Workout Tracker</h1>
+        <div class="dropdown" onclick="redirectTo('upperbody.html')">
+            <button class="dropbtn">Upper Body</button>
+            <div class="dropdown-content">
+                <!-- Dropdown content -->
+            </div>
+        </div>
+        <div class="dropdown" onclick="redirectTo('lowerbody.html')">
+            <button class="dropbtn">Lower Body</button>
+            <div class="dropdown-content">
+                <!-- Dropdown content -->
+            </div>
+        </div>
+        <div class="dropdown" onclick="redirectTo('core.html')">
+            <button class="dropbtn">Core</button>
+            <div class="dropdown-content">
+                <!-- Dropdown content -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
+
