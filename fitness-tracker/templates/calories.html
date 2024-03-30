@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='calories.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Calorie Tracker</h1>
+        <form method="POST" action="/calculate">
+            <div class="form-group">
+                <label for="food_name">Food Name:</label>
+                <input type="text" id="food_name" name="food_name" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="0" value="0" required>
+            </div>
+            <button type="submit" class="btn">Calculate Calories</button>
+        </form>
+        {% if total_calories is not none %}
+            <p>Total Calories: {{ total_calories }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

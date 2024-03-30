@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lower Body Workout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='lowerbody.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lower Body Workout</h1>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Reps</th>
+                    <th>Personal Record (PR)</th>
+                </tr>
+                <tr>
+                    <td>Bulgarian Split Squat</td>
+                    <td><input type="number" id="bulgarian_split_squat" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Goblet Squat</td>
+                    <td><input type="number" id="goblet_squat" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Lateral Lunge</td>
+                    <td><input type="number" id="lateral_lunge" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Single Leg Deadlift</td>
+                    <td><input type="number" id="single_leg_deadlift" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Reverse Lunge</td>
+                    <td><input type="number" id="reverse_lunge" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Calf Raise</td>
+                    <td><input type="number" id="calf_raise" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Glute Bridge</td>
+                    <td><input type="number" id="glute_bridge_lowerbody" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Lunge Squat</td>
+                    <td><input type="number" id="lunge_squat" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Barbell Calf Raise</td>
+                    <td><input type="number" id="barbell_calf_raise" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Hip Thrusts</td>
+                    <td><input type="number" id="hip_thrusts" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+            </table>
+            <button onclick="saveReps()">Save</button> <!-- Add the Save button -->
+        </div>
+    </div>
+
+    <script>
+        function showCongratsMessage() {
+            alert("Congratulations! Keep working hard!");
+        }
+
+        function saveReps() {
+            var bulgarianSplitSquatReps = document.getElementById("bulgarian_split_squat").value;
+            var gobletSquatReps = document.getElementById("goblet_squat").value;
+            var lateralLungeReps = document.getElementById("lateral_lunge").value;
+            var singleLegDeadliftReps = document.getElementById("single_leg_deadlift").value;
+            var reverseLungeReps = document.getElementById("reverse_lunge").value;
+            var calfRaiseReps = document.getElementById("calf_raise").value;
+            var gluteBridgeLowerBodyReps = document.getElementById("glute_bridge_lowerbody").value;
+            var lungeSquatReps = document.getElementById("lunge_squat").value;
+            var barbellCalfRaiseReps = document.getElementById("barbell_calf_raise").value;
+            var hipThrustsReps = document.getElementById("hip_thrusts").value;
+            
+            console.log("Bulgarian Split Squat reps: " + bulgarianSplitSquatReps);
+            console.log("Goblet Squat reps: " + gobletSquatReps);
+            console.log("Lateral Lunge reps: " + lateralLungeReps);
+            console.log("Single Leg Deadlift reps: " + singleLegDeadliftReps);
+            console.log("Reverse Lunge reps: " + reverseLungeReps);
+            console.log("Calf Raise reps: " + calfRaiseReps);
+            console.log("Glute Bridge reps: " + gluteBridgeLowerBodyReps);
+            console.log("Lunge Squat reps: " + lungeSquatReps);
+            console.log("Barbell Calf Raise reps: " + barbellCalfRaiseReps);
+            console.log("Hip Thrusts reps: " + hipThrustsReps);
+            // Display success message
+            alert("Reps have been successfully saved!");
+        }
+    </script>
+</body>
+</html>
