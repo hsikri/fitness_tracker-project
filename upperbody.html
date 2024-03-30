@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upper Body Workout</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='upperbody.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='core.css') }}">
 </head>
 <body>
     <div class="container">
@@ -15,78 +15,85 @@
                     <th>Exercise</th>
                     <th>Reps</th>
                     <th>Personal Record (PR)</th>
-                    <th>Save</th> <!-- New column for Save button -->
                 </tr>
                 <tr>
-                    <td>Bent-over row</td>
+                    <td>Bent-over Row</td>
                     <td><input type="number" id="bent_over_row" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
-                    <td>Overhead press</td>
+                    <td>Overhead Press</td>
                     <td><input type="number" id="overhead_press" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
-                    <td>Bench press</td>
+                    <td>Bench Press</td>
                     <td><input type="number" id="bench_press" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
-                    <td>Bicep curl</td>
+                    <td>Bicep Curl</td>
                     <td><input type="number" id="bicep_curl" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
                     <td>Pushups</td>
                     <td><input type="number" id="pushups" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
-                    <td>Triceps dips</td>
+                    <td>Triceps Dips</td>
                     <td><input type="number" id="triceps_dips" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
-                    <td>Arnold press</td>
+                    <td>Arnold Press</td>
                     <td><input type="number" id="arnold_press" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
-                    <td>Chest press</td>
+                    <td>Chest Press</td>
                     <td><input type="number" id="chest_press" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
-                    <td>Chest supported rows</td>
+                    <td>Chest Supported Rows</td>
                     <td><input type="number" id="chest_supported_rows" value="0"></td>
-                    <td><button onclick="showCongratulations()">PR</button></td>
-                    <td><button onclick="saveReps(this)">Save</button></td> <!-- Save button -->
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
             </table>
+            <button onclick="saveReps()">Save</button> <!-- Add the Save button -->
         </div>
     </div>
+
     <script>
-        function showCongratulations() {
+        function showCongratsMessage() {
             alert("Congratulations! Keep working hard!");
         }
 
-        function saveReps(button) {
-            var row = button.parentNode.parentNode;
-            var exercise = row.cells[0].innerText;
-            var reps = row.cells[1].querySelector('input').value;
-
-            // You can perform further actions here, such as sending the data to the server for saving
-            alert("Reps for " + exercise + " saved: " + reps);
-        }
+        function saveReps() {
+            var bentOverRowReps = document.getElementById("bent_over_row").value;
+            var overheadPressReps = document.getElementById("overhead_press").value;
+            var benchPressReps = document.getElementById("bench_press").value;
+            var bicepCurlReps = document.getElementById("bicep_curl").value;
+            var pushupsReps = document.getElementById("pushups").value;
+            var tricepsDipsReps = document.getElementById("triceps_dips").value;
+            var arnoldPressReps = document.getElementById("arnold_press").value;
+            var chestPressReps = document.getElementById("chest_press").value;
+            var chestSupportedRowsReps = document.getElementById("chest_supported_rows").value;
+            
+            console.log("Bent-over Row reps: " + bentOverRowReps);
+            console.log("Overhead Press reps: " + overheadPressReps);
+            console.log("Bench Press reps: " + benchPressReps);
+            console.log("Bicep Curl reps: " + bicepCurlReps);
+            console.log("Pushups reps: " + pushupsReps);
+            console.log("Triceps Dips reps: " + tricepsDipsReps);
+            console.log("Arnold Press reps: " + arnoldPressReps);
+            console.log("Chest Press reps: " + chestPressReps);
+            console.log("Chest Supported Rows reps: " + chestSupportedRowsReps);
+	// Display success message
+            alert("Reps have been successfully saved!"); 
+       }
     </script>
 </body>
 </html>
