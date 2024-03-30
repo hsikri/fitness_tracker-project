@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 import sqlite3
 
 app = Flask(__name__)
@@ -146,6 +146,14 @@ def calculate_calories():
     total_calories = quantity * 100
 
     return render_template('calories.html', total_calories=total_calories)
+
+@app.route('/save_water_intake', methods=['POST'])
+def save_water_intake():
+    data = request.json  # Get the JSON data from the request
+    # Here, you can process the data (e.g., save it to a database)
+    # For demonstration, let's just print it
+    print("Received data:", data)
+    return jsonify({"message": "Data received successfully"})
 
 if __name__ == '__main__':
     initialize_database()
