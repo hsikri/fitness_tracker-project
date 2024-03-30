@@ -1,0 +1,41 @@
+c1b3ecd2
+
+442b9feaf2818e00f0c869f0a71ea127—
+
+
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+# Replace with your Nutritionix API credentials
+YOUR_APP_ID = "YOUR_APP_ID"
+YOUR_API_KEY = "YOUR_API_KEY"
+
+@app.route('/')
+def search_food():
+    return render_template('search.html')
+
+@app.route('/results', methods=['POST'])
+def search_results():
+    search_term = request.form['query']
+
+    # Build the API request URL
+    url = f"https://api.nutritionix.com/v1/search/{search_term}"
+    headers = {
+        "x-app-id": YOUR_APP_ID,
+        "x-app-key": YOUR_API_KEY,
+    }
+
+    # Send the request and handle response
+    response = requests.get(url, headers=headers)
+    data = response.json()
+
+    if data.get("hits"):
+        food_items = data["hits"]
+    else:
+        food_items = []
+
+    return render_template('results.html', food_items=food_items)
+
+if __name__ == '__main__':
+    app.run(debug=True)
