@@ -9,111 +9,98 @@
 <body>
     <div class="container">
         <h1>Core Workout</h1>
-        <div class="exercise">
-            <h2>Exercise 1: Plank</h2>
+        <div class="table-container">
             <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <th>Exercise</th>
+                    <th>Reps</th>
+                    <th>Personal Record (PR)</th>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 2: Side Plank</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Plank</td>
+                    <td><input type="number" id="plank" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 3: Bird Dog Exercise</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Side Plank</td>
+                    <td><input type="number" id="side_plank" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 4: Deadbug Hollow Hold</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Bird Dog Exercise</td>
+                    <td><input type="number" id="bird_dog" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 5: Bicycle Crunches</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Deadbug Hollow Hold</td>
+                    <td><input type="number" id="deadbug_hollow_hold" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 6: Glute Bridge</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Bicycle Crunches</td>
+                    <td><input type="number" id="bicycle_crunches" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 7: Leg Raise</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Glute Bridge</td>
+                    <td><input type="number" id="glute_bridge" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 8: Crunches</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Leg Raise</td>
+                    <td><input type="number" id="leg_raise" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 9: Russian Twists</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Crunches</td>
+                    <td><input type="number" id="crunches" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
-            </table>
-            <button onclick="showCongratsMessage()">PR</button>
-        </div>
-        <div class="exercise">
-            <h2>Exercise 10: Mountain Climbers</h2>
-            <table>
                 <tr>
-                    <td>Number of Reps:</td>
-                    <td><input type="number" value="0"></td>
+                    <td>Russian Twists</td>
+                    <td><input type="number" id="russian_twists" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
+                </tr>
+                <tr>
+                    <td>Mountain Climbers</td>
+                    <td><input type="number" id="mountain_climbers" value="0"></td>
+                    <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
             </table>
-            <button onclick="showCongratsMessage()">PR</button>
+            <button onclick="saveReps()">Save</button> <!-- Add the Save button -->
         </div>
     </div>
 
     <script>
         function showCongratsMessage() {
             alert("Congratulations! Keep working hard!");
+        }
+
+        function saveReps() {
+            var plankReps = document.getElementById("plank").value;
+            var sidePlankReps = document.getElementById("side_plank").value;
+            var birdDogReps = document.getElementById("bird_dog").value;
+            var deadbugReps = document.getElementById("deadbug_hollow_hold").value;
+            var bicycleCrunchesReps = document.getElementById("bicycle_crunches").value;
+            var gluteBridgeReps = document.getElementById("glute_bridge").value;
+            var legRaiseReps = document.getElementById("leg_raise").value;
+            var crunchesReps = document.getElementById("crunches").value;
+            var russianTwistsReps = document.getElementById("russian_twists").value;
+            var mountainClimbersReps = document.getElementById("mountain_climbers").value;
+            
+            console.log("Plank reps: " + plankReps);
+            console.log("Side Plank reps: " + sidePlankReps);
+            console.log("Bird Dog Exercise reps: " + birdDogReps);
+            console.log("Deadbug Hollow Hold reps: " + deadbugReps);
+            console.log("Bicycle Crunches reps: " + bicycleCrunchesReps);
+            console.log("Glute Bridge reps: " + gluteBridgeReps);
+            console.log("Leg Raise reps: " + legRaiseReps);
+            console.log("Crunches reps: " + crunchesReps);
+            console.log("Russian Twists reps: " + russianTwistsReps);
+            console.log("Mountain Climbers reps: " + mountainClimbersReps);
+	// Display success message
+            alert("Reps have been successfully saved!");
+
         }
     </script>
 </body>
