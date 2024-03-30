@@ -10,19 +10,81 @@
     <div class="container">
         <div class="water-intake-card">
             <h1>Water Intake</h1>
-            <form action="/add_water_intake" method="post">
+            <form id="water-intake-form" action="/add_water_intake" method="post">
                 <div class="input-group">
                     <label for="liters">Liters:</label>
                     <input type="number" id="liters" name="liters" required step="0.01">
                 </div>
                 <div class="input-group">
-                    <label for="timestamp">Timestamp:</label>
-                    <input type="datetime-local" id="timestamp" name="timestamp" required>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="input-group">
+                    <label for="time">Time:</label>
+                    <select id="time" name="time">
+                        <option value="current">Current Time</option>
+                        <!-- Add additional options for specific times if needed -->
+                    </select>
                 </div>
                 <button type="submit">Submit</button>
             </form>
         </div>
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("water-intake-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            
+            // Get form data
+            var liters = document.getElementById("liters").value;
+            var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
+
+            // If the user selected "current", use the current time
+            var timestamp;
+            if (time === "current") {
+                var now = new Date();
+                var hours = now.getHours().toString().padStart(2, "0");
+                var minutes = now.getMinutes().toString().padStart(2, "0");
+                timestamp = date + "T" + hours + ":" + minutes;
+            } else {
+                timestamp = date + "T" + time; // Use the selected time
+            }
+
+            // Create an object with the form data
+            var formData = {
+                liters: liters,
+                timestamp: timestamp
+            };
+
+            // Send the form data to the server (you can use Fetch API or XMLHttpRequest)
+            fetch("/save_water_intake", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Handle the response from the server
+                console.log("Data saved successfully:", data);
+                // You can perform further actions here, such as showing a success message
+            })
+            .catch(error => {
+                // Handle errors
+                console.error("There was a problem saving the data:", error);
+                // You can show an error message to the user
+            });
+        });
+    });
+    </script>
 </body>
 </html>
 
