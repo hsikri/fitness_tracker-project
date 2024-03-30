@@ -128,6 +128,24 @@ def core():
 def calories():
     return render_template('calories.html')
 
+# Replace with your Nutritionix API credentials
+YOUR_APP_ID = "c1b3ecd2"
+YOUR_API_KEY = "442b9feaf2818e00f0c869f0a71ea127"
+
+@app.route('/')
+def search_food():
+    return render_template('calories.html')
+
+@app.route('/calculate', methods=['POST'])
+def calculate_calories():
+    food_name = request.form['food_name']
+    quantity = float(request.form['quantity'])
+
+    # Perform your calorie calculation logic here
+    # For demonstration, let's assume each food item has 100 calories per serving
+    total_calories = quantity * 100
+
+    return render_template('calories.html', total_calories=total_calories)
 
 if __name__ == '__main__':
     initialize_database()
