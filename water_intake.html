@@ -23,8 +23,9 @@
                     <label for="time">Time:</label>
                     <select id="time" name="time">
                         <option value="current">Current Time</option>
-                        <!-- Add additional options for specific times if needed -->
+                        <option value="other">Other Time</option>
                     </select>
+                    <input type="time" id="custom-time" name="custom-time" style="display: none;">
                 </div>
                 <button type="submit">Submit</button>
             </form>
@@ -33,6 +34,17 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
+        var timeSelect = document.getElementById("time");
+        var customTimeInput = document.getElementById("custom-time");
+
+        timeSelect.addEventListener("change", function() {
+            if (timeSelect.value === "other") {
+                customTimeInput.style.display = "block";
+            } else {
+                customTimeInput.style.display = "none";
+            }
+        });
+
         document.getElementById("water-intake-form").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent the default form submission behavior
             
@@ -40,6 +52,7 @@
             var liters = document.getElementById("liters").value;
             var date = document.getElementById("date").value;
             var time = document.getElementById("time").value;
+            var customTime = document.getElementById("custom-time").value;
 
             // If the user selected "current", use the current time
             var timestamp;
@@ -48,6 +61,8 @@
                 var hours = now.getHours().toString().padStart(2, "0");
                 var minutes = now.getMinutes().toString().padStart(2, "0");
                 timestamp = date + "T" + hours + ":" + minutes;
+            } else if (time === "other" && customTime) {
+                timestamp = date + "T" + customTime; // Use the custom time
             } else {
                 timestamp = date + "T" + time; // Use the selected time
             }
