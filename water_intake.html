@@ -29,6 +29,7 @@
                 </div>
                 <button type="submit">Submit</button>
             </form>
+            <p id="motivational-message" style="display: none;"></p>
         </div>
     </div>
 
@@ -36,6 +37,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         var timeSelect = document.getElementById("time");
         var customTimeInput = document.getElementById("custom-time");
+        var motivationalMessage = document.getElementById("motivational-message");
 
         timeSelect.addEventListener("change", function() {
             if (timeSelect.value === "other") {
@@ -90,6 +92,9 @@
             .then(data => {
                 // Handle the response from the server
                 console.log("Data saved successfully:", data);
+                // Display a motivational message to the client
+                motivationalMessage.textContent = "Great job! You've successfully recorded your water intake.";
+                motivationalMessage.style.display = "block";
                 // You can perform further actions here, such as showing a success message
             })
             .catch(error => {
