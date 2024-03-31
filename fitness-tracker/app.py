@@ -150,7 +150,11 @@ def submit_goals():
     age = int(request.form['age'])
     current_weight = float(request.form['current_weight'])
     goal_weight = float(request.form['goal_weight'])
-    height = float(request.form['height'])
+    height = float(request.form['height_value'])
+
+    # Convert height to meters if it's in feet
+    if request.form['height_unit'] == 'ft':
+        height *= 0.3048  # 1 foot = 0.3048 meters
 
     # Calculate BMI
     bmi = current_weight / (height * height)

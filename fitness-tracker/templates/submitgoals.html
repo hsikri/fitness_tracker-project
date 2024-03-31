@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goals Submitted</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='submit.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='submitgoals.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Goals Submitted</h1>
         <div class="feedback">
-            <p>Your BMI is: {{ bmi }}</p>
-            <p>Your BMR is: {{ bmr }}</p>
-            <p>{{ feedback }}</p>
+            <p class="bmi">Your BMI is: {{ bmi }}</p>
+            <p class="bmr">Your BMR is: {{ bmr }}</p>
+            <p class="feedback-text">{{ feedback }}</p>
         </div>
     </div>
 </body>
