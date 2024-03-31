@@ -128,6 +128,11 @@ def core():
 def calories():
     return render_template('calories.html')
 
+# Route for set goals page
+@app.route('/setgoals')
+def set_goals():
+    return render_template('setgoals.html')
+
 # Replace with your Nutritionix API credentials
 YOUR_APP_ID = "c1b3ecd2"
 YOUR_API_KEY = "442b9feaf2818e00f0c869f0a71ea127"
@@ -154,7 +159,7 @@ def save_water_intake():
     # For demonstration, let's just print it
     print("Received data:", data)
     return jsonify({"message": "Data received successfully"})
-
+    
 if __name__ == '__main__':
     initialize_database()
     app.run(debug=True)

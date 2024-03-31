@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lower Body Workout</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='core.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lowerbody.css') }}">
 </head>
 <body>
     <div class="container">
@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <td>Glute Bridge</td>
-                    <td><input type="number" id="glute_bridge" value="0"></td>
+                    <td><input type="number" id="glute_bridge_lowerbody" value="0"></td>
                     <td><button onclick="showCongratsMessage()">PR</button></td>
                 </tr>
                 <tr>
@@ -83,7 +83,7 @@
             var singleLegDeadliftReps = document.getElementById("single_leg_deadlift").value;
             var reverseLungeReps = document.getElementById("reverse_lunge").value;
             var calfRaiseReps = document.getElementById("calf_raise").value;
-            var gluteBridgeReps = document.getElementById("glute_bridge").value;
+            var gluteBridgeLowerBodyReps = document.getElementById("glute_bridge_lowerbody").value;
             var lungeSquatReps = document.getElementById("lunge_squat").value;
             var barbellCalfRaiseReps = document.getElementById("barbell_calf_raise").value;
             var hipThrustsReps = document.getElementById("hip_thrusts").value;
@@ -94,10 +94,12 @@
             console.log("Single Leg Deadlift reps: " + singleLegDeadliftReps);
             console.log("Reverse Lunge reps: " + reverseLungeReps);
             console.log("Calf Raise reps: " + calfRaiseReps);
-            console.log("Glute Bridge reps: " + gluteBridgeReps);
+            console.log("Glute Bridge reps: " + gluteBridgeLowerBodyReps);
             console.log("Lunge Squat reps: " + lungeSquatReps);
             console.log("Barbell Calf Raise reps: " + barbellCalfRaiseReps);
             console.log("Hip Thrusts reps: " + hipThrustsReps);
+            // Display success message
+            alert("Reps have been successfully saved!");
         }
     </script>
 </body>
