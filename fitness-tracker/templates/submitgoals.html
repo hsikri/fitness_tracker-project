@@ -13,6 +13,9 @@
             <p class="bmi">Your BMI is: {{ bmi }}</p>
             <p class="bmr">Your BMR is: {{ bmr }}</p>
             <p class="feedback-text">{{ feedback }}</p>
+            {% if goal_feedback %}
+                <p class="calories-needed">Calories Needed: {{ goal_feedback }}</p>
+            {% endif %}
         </div>
     </div>
 </body>

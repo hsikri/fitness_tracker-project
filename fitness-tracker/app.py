@@ -175,8 +175,19 @@ def submit_goals():
     else:
         feedback = "You are obese. It's important to make healthy lifestyle changes."
 
+    # Calculate calories needed for weight goals
+    if goal_weight > current_weight:
+        calories_needed = bmr * 1.2  # Gain weight
+        goal_feedback = "To gain weight, you should consume approximately {} calories per day.".format(int(calories_needed))
+    elif goal_weight < current_weight:
+        calories_needed = bmr * 0.8  # Lose weight
+        goal_feedback = "To lose weight, you should consume approximately {} calories per day.".format(int(calories_needed))
+    else:
+        calories_needed = bmr  # Maintain weight
+        goal_feedback = "To maintain weight, you should consume approximately {} calories per day.".format(int(calories_needed))
+
     # Render the submit.html template with BMI, BMR, and feedback
-    return render_template('submitgoals.html', bmi=bmi, bmr=bmr, feedback=feedback)
+    return render_template('submitgoals.html', bmi=bmi, bmr=bmr, feedback=feedback, goal_feedback=goal_feedback)
 
 if __name__ == '__main__':
     initialize_database()
