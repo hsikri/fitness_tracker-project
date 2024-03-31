@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Goals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='setgoals.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Set Goals</h1>
+        <form action="/submit_goals" method="post" class="goal-form">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="current_weight">Current Weight (kg):</label>
+                <input type="number" id="current_weight" name="current_weight" required step="any">
+            </div>
+
+            <div class="form-group">
+                <label for="goal_weight">Goal Weight (kg):</label>
+                <input type="number" id="goal_weight" name="goal_weight" required step="any">
+            </div>
+
+            <div class="form-group">
+                <label for="height">Height:</label>
+                <select id="height_unit" name="height_unit" required>
+                    <option value="cm">Centimeters</option>
+                    <option value="ft">Feet</option>
+                </select>
+                <input type="number" id="height_value" name="height_value" placeholder="Height" required step="any">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+    </div>
+</body>
+</html>
