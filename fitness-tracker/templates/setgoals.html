@@ -27,14 +27,20 @@
 
             <div class="form-group">
                 <label for="height">Height:</label>
-                <select id="height" name="height_unit" required>
-                    <option value="cm">Centimeters (cm)</option>
-                    <option value="ft">Feet (ft)</option>
+                <select id="height_unit" name="height_unit" required>
+                    <option value="cm">Centimeters</option>
+                    <option value="ft">Feet</option>
                 </select>
-                <input type="number" id="height" name="height" step="0.01" placeholder="Enter Height" required>
+                <input type="number" id="height_value" name="height_value" placeholder="Height" required>
             </div>
 
-            <div id="result"></div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
 
             <input type="submit" value="Submit" class="submit-button">
         </form>

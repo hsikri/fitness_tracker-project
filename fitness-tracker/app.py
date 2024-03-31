@@ -72,22 +72,6 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('home'))  # Redirect to the home page (login) after logout
 
-'''# Route for adding a workout
-@app.route('/add_workout', methods=['POST'])
-def add_workout():
-    if 'username' in session:
-        date = request.form['date']
-        exercise = request.form['exercise']
-        duration = request.form['duration']
-        conn = sqlite3.connect('fitness_tracker.db')
-        c = conn.cursor()
-        c.execute("INSERT INTO workouts (user_id, date, exercise, duration) VALUES (?, ?, ?, ?)", (1, date, exercise, duration))
-        conn.commit()
-        conn.close()
-        return redirect(url_for('dashboard'))
-    else:
-        return redirect(url_for('home'))
-'''
 # Routes for other functionalities...
 
 # Route for water intake page
@@ -177,9 +161,19 @@ def submit_goals():
     else:
         bmr = 10 * current_weight + 6.25 * height * 100 - 5 * age - 161
 
-    # Process form data or return calculated BMI and BMR
-    return f"Your BMI is: {bmi}, Your BMR is: {bmr}"
-    
+    # Define feedback based on BMI value
+    if bmi < 18.5:
+        feedback = "You are underweight. Consider increasing your calorie intake."
+    elif 18.5 <= bmi < 25:
+        feedback = "Your weight is within the normal range. Keep up the good work!"
+    elif 25 <= bmi < 30:
+        feedback = "You are overweight. Consider reducing your calorie intake and increasing physical activity."
+    else:
+        feedback = "You are obese. It's important to make healthy lifestyle changes."
+
+    # Render the submit.html template with BMI, BMR, and feedback
+    return render_template('submitgoals.html', bmi=bmi, bmr=bmr, feedback=feedback)
+
 if __name__ == '__main__':
     initialize_database()
     app.run(debug=True)
