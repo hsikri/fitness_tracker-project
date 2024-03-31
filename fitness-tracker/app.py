@@ -160,6 +160,26 @@ def save_water_intake():
     print("Received data:", data)
     return jsonify({"message": "Data received successfully"})
     
+@app.route('/submit_goals', methods=['POST'])
+def submit_goals():
+    # Retrieve form data
+    age = int(request.form['age'])
+    current_weight = float(request.form['current_weight'])
+    goal_weight = float(request.form['goal_weight'])
+    height = float(request.form['height'])
+
+    # Calculate BMI
+    bmi = current_weight / (height * height)
+
+    # Calculate BMR (using Mifflin-St Jeor Equation)
+    if request.form.get('gender') == 'male':
+        bmr = 10 * current_weight + 6.25 * height * 100 - 5 * age + 5
+    else:
+        bmr = 10 * current_weight + 6.25 * height * 100 - 5 * age - 161
+
+    # Process form data or return calculated BMI and BMR
+    return f"Your BMI is: {bmi}, Your BMR is: {bmr}"
+    
 if __name__ == '__main__':
     initialize_database()
     app.run(debug=True)

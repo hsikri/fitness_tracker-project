@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Goals</title>
-    <link rel="stylesheet" href="setgoals.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='setgoals.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Set Goals</h1>
-        <form action="/submit_goals" method="post">
+        <form action="/submit_goals" method="post" class="goal-form">
             <div class="form-group">
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" required>
@@ -26,20 +26,15 @@
             </div>
 
             <div class="form-group">
-                <input type="checkbox" id="calculate_bmi">
-                <label for="calculate_bmi">Calculate BMI</label>
+                <label for="height">Height (m):</label>
+                <input type="number" id="height" name="height" step="0.01" placeholder="e.g., 1.75">
             </div>
 
-            <div class="bmi-group">
-                <input type="number" id="height" placeholder="Height (m)">
-                <button id="calculate_bmi_btn">Calculate BMI</button>
-                <div id="bmi-result"></div>
-            </div>
+            <button id="calculate_bmi_btn">Calculate BMI</button>
+            <div id="bmi-result"></div>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="submit-button">
         </form>
     </div>
-
-    <script src="setgoals.js"></script>
 </body>
 </html>
