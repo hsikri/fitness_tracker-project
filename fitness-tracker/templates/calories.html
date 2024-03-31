@@ -16,12 +16,17 @@
             </div>
             <div class="form-group">
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="0" value="0" required>
+                <input type="text" id="quantity" name="quantity" required>
+                <select id="unit" name="unit">
+                    <option value="grams">grams</option>
+                    <option value="ounces">ounces</option>
+                    <option value="pounds">pounds</option>
+                </select>
             </div>
             <button type="submit" class="btn">Calculate Calories</button>
         </form>
         {% if total_calories is not none %}
-            <p>Total Calories: {{ total_calories }}</p>
+            <p class="total-calories">Total Calories: {{ total_calories }}</p>
         {% endif %}
     </div>
 </body>

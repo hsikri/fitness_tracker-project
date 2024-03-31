@@ -26,11 +26,10 @@ h1 {
 .tiles {
     display: flex;
     justify-content: space-around; /* Equal spacing between tiles */
-    flex-wrap: wrap; /* Allow tiles to wrap to the next line */
 }
 
 .tile {
-    flex: 1; /* Equal distribution of space among tiles */
+    width: 30%;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
@@ -47,19 +46,24 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Logout button styles */
-.logout-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+/* Additional styles for the logout button */
+.logout-button {
+    background-color: black; /* Change to black background */
     border: none;
-    border-radius: 5px;
+    color: white;
+    padding: 20px 40px; /* Increased padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px; /* Increased font size */
+    margin: 4px 2px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    border-radius: 8px; /* Rounded corners */
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Box shadow */
 }
 
-.logout-btn:hover {
-    background-color: #0056b3;
+/* Hover effect */
+.logout-button:hover {
+    background-color: #333; /* Darker shade of black */
 }
