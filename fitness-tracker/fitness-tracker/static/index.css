@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/login.jpg'); /* Adjust the URL to point to the correct location */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.container {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    margin: auto; /* Center the container horizontally */
+    margin-top: 100px; /* Adjust the top margin as needed */
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container button:hover {
+    background-color: #0056b3;
+}
+
+.container p {
+    margin-top: 20px;
+}
+
+.container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.container p a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
