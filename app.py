@@ -72,24 +72,6 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('home'))  # Redirect to the home page (login) after logout
 
-'''# Route for adding a workout
-@app.route('/add_workout', methods=['POST'])
-def add_workout():
-    if 'username' in session:
-        date = request.form['date']
-        exercise = request.form['exercise']
-        duration = request.form['duration']
-        conn = sqlite3.connect('fitness_tracker.db')
-        c = conn.cursor()
-        c.execute("INSERT INTO workouts (user_id, date, exercise, duration) VALUES (?, ?, ?, ?)", (1, date, exercise, duration))
-        conn.commit()
-        conn.close()
-        return redirect(url_for('dashboard'))
-    else:
-        return redirect(url_for('home'))
-'''
-# Routes for other functionalities...
-
 # Route for water intake page
 @app.route('/water_intake')
 def water_intake():
