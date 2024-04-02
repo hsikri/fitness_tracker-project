@@ -1,28 +1,28 @@
-<!-- trackprogress.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Track Progress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='trackprogress.css') }}">  </head>
 </head>
 <body>
-    <h1>Welcome, {{ username }}!</h1>
-    
-    <h2>Workouts</h2>
+    <h1>Track Progress</h1>
+
+    <h2>Water Intake</h2>
+    <p>Total Liters Consumed: {{ total_liters }}</p>
+
+    <h2>Workout Tracker</h2>
     <ul>
         {% for workout in workouts %}
-            <li>Date: {{ workout.date }}, Exercise: {{ workout.exercise }}, Duration: {{ workout.duration }}</li>
+        <li>{{ workout.date }} - {{ workout.exercise }} ({{ workout.duration }} minutes)</li>
         {% endfor %}
     </ul>
-    
-    <h2>Water Intake</h2>
-    <ul>
-        {% for intake in water_intake %}
-            <li>Date: {{ intake.date }}, Liters: {{ intake.liters }}</li>
-        {% endfor %}
-    </ul>
-    
-    <!-- Add more progress tracking elements as needed -->
+
+    <h2>Set Goals</h2>
+    <p>BMI: {{ bmi }}</p>
+    <p>BMR: {{ bmr }}</p>
+    <p>Feedback: {{ feedback }}</p>
+    <p>Goal Feedback: {{ goal_feedback }}</p>
 </body>
 </html>
